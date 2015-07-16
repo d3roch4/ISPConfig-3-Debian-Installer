@@ -65,7 +65,7 @@ done
 #Execute functions#
 if [ $ISPConfig_Installed = "No" ]; then
 	install_Questions
-	$DISTRIBUTION.install_Repos
+	#$DISTRIBUTION.install_Repos # install repos is unnecessery, possible answer
 	header "Installing Basics..."
 	install_Basic
 	if [ $DISTRIBUTION == "ubuntu" ]; then
