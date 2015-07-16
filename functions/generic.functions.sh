@@ -115,7 +115,8 @@ fi
 install_Basic () {
 
 apt-get update
-apt-get -y upgrade
+# not necessari, upgrade is vary hard
+#apt-get -y upgrade
 
 package_install hostname
 
@@ -124,8 +125,10 @@ sed -i "s/${serverIP}.*/${serverIP} ${HOSTNAMEFQDN} ${HOSTNAMESHORT}/" /etc/host
 echo "$HOSTNAMEFQDN" > /etc/hostname
 /etc/init.d/hostname.sh start >/dev/null 2>&1
 
-apt-get update
-apt-get -y upgrade
+# update duplicate
+#apt-get update
+# not necessari, upgrade is vary hard
+#apt-get -y upgrade
 apt-get install -y vim-nox dnsutils unzip rkhunter binutils sudo bzip2 zip
 
 echo "dash dash/sh boolean false" | debconf-set-selections
